@@ -1,6 +1,6 @@
-import { json, type RequestEvent, type RequestHandler } from '@sveltejs/kit';
+import { json, type RequestHandler } from '@sveltejs/kit';
 
-export const POST: RequestHandler = async (e: RequestEvent) => {
-    const requestBody = e.request.body
-    return json({posted: requestBody});
+export const POST: RequestHandler = async ({request}) => {
+    const { name } = await request.json()
+    return json({posted: name});
 };
