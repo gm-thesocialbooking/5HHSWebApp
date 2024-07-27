@@ -1,14 +1,8 @@
+/** @type {import('tailwindcss').Config} */
 export default {
-    plugins: [],
-    theme: {
+  content: ['./src/{routes,internal}/**/*.{js,svelte,ts}'],
+  theme: {
     extend: {},
-    },
-	content: [
-		"./src/**/*.{js,jsx,ts,tsx}",
-	],
-    purge: ["./index.html",'./src/**/*.{svelte,js,ts}'], //for unused css
-    variants: {
-      	extend: {},
-    },
-    darkmode: false, // or 'media' or 'class'
-  }
+  },
+  plugins: [],
+}
