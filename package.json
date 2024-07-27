@@ -1,29 +1,177 @@
 {
-	"name": "5_horizons_health_services",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"build": "vite build",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"dev": "vite dev --open",
-		"preview": "vite preview"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-vercel": "^5.4.1",
-		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^3.0.0",
-		"autoprefixer": "^10.4.19",
-		"postcss": "^8.4.39",
-		"svelte": "^4.2.7",
-		"svelte-check": "^3.6.0",
-		"tailwindcss": "^3.4.6",
-		"tslib": "^2.4.1",
-		"typescript": "^5.0.0",
-		"vite": "^5.0.3"
-	},
-	"type": "module",
-	"dependencies": {
-		"clerk-sveltekit": "^0.4.2"
-	}
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint ."
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./dist/client/index.d.ts",
+      "svelte": "./dist/client/index.js"
+    },
+    "./headless": {
+      "types": "./dist/headless/index.d.ts",
+      "svelte": "./dist/headless/index.js"
+    },
+    "./server": {
+      "types": "./dist/server/index.d.ts",
+      "svelte": "./dist/server/index.js"
+    },
+    "./client/ClerkLoaded.svelte": {
+      "types": "./dist/client/ClerkLoaded.svelte.d.ts",
+      "svelte": "./dist/client/ClerkLoaded.svelte"
+    },
+    "./client/ClerkLoading.svelte": {
+      "types": "./dist/client/ClerkLoading.svelte.d.ts",
+      "svelte": "./dist/client/ClerkLoading.svelte"
+    },
+    "./client/SignedIn.svelte": {
+      "types": "./dist/client/SignedIn.svelte.d.ts",
+      "svelte": "./dist/client/SignedIn.svelte"
+    },
+    "./client/SignedOut.svelte": {
+      "types": "./dist/client/SignedOut.svelte.d.ts",
+      "svelte": "./dist/client/SignedOut.svelte"
+    },
+    "./client/SignIn.svelte": {
+      "types": "./dist/client/SignIn.svelte.d.ts",
+      "svelte": "./dist/client/SignIn.svelte"
+    },
+    "./client/SignUp.svelte": {
+      "types": "./dist/client/SignUp.svelte.d.ts",
+      "svelte": "./dist/client/SignUp.svelte"
+    },
+    "./client/UserButton.svelte": {
+      "types": "./dist/client/UserButton.svelte.d.ts",
+      "svelte": "./dist/client/UserButton.svelte"
+    },
+    "./client/UserProfile.svelte": {
+      "types": "./dist/client/UserProfile.svelte.d.ts",
+      "svelte": "./dist/client/UserProfile.svelte"
+    },
+    "./client/SignInButton.svelte": {
+      "types": "./dist/client/SignInButton.svelte.d.ts",
+      "svelte": "./dist/client/SignInButton.svelte"
+    },
+    "./client/SignUpButton.svelte": {
+      "types": "./dist/client/SignUpButton.svelte.d.ts",
+      "svelte": "./dist/client/SignUpButton.svelte"
+    },
+    "./client/SignOutButton.svelte": {
+      "types": "./dist/client/SignOutButton.svelte.d.ts",
+      "svelte": "./dist/client/SignOutButton.svelte"
+    },
+    "./client/OrganizationProfile.svelte": {
+      "types": "./dist/client/OrganizationProfile.svelte.d.ts",
+      "svelte": "./dist/client/OrganizationProfile.svelte"
+    },
+    "./client/OrganizationSwitcher.svelte": {
+      "types": "./dist/client/OrganizationSwitcher.svelte.d.ts",
+      "svelte": "./dist/client/OrganizationSwitcher.svelte"
+    },
+    "./client/CreateOrganization.svelte": {
+      "types": "./dist/client/CreateOrganization.svelte.d.ts",
+      "svelte": "./dist/client/CreateOrganization.svelte"
+    }
+  },
+  "typesVersions": {
+    ">4.0": {
+      "index.d.ts": [
+        "./dist/index.d.ts"
+      ],
+      "server": [
+        "./dist/server/index.d.ts"
+      ],
+      "client": [
+        "./dist/client/index.d.ts"
+      ],
+      "headless": [
+        "./dist/headless/index.d.ts"
+      ],
+      "client/ClerkLoaded.svelte": [
+        "./dist/client/ClerkLoaded.svelte.d.ts"
+      ],
+      "client/ClerkLoading.svelte": [
+        "./dist/client/ClerkLoading.svelte.d.ts"
+      ],
+      "client/SignedIn.svelte": [
+        "./dist/client/SignedIn.svelte.d.ts"
+      ],
+      "client/SignedOut.svelte": [
+        "./dist/client/SignedOut.svelte.d.ts"
+      ],
+      "client/SignIn.svelte": [
+        "./dist/client/SignIn.svelte.d.ts"
+      ],
+      "client/SignUp.svelte": [
+        "./dist/client/SignUp.svelte.d.ts"
+      ],
+      "client/UserButton.svelte": [
+        "./dist/client/UserButton.svelte.d.ts"
+      ],
+      "client/UserProfile.svelte": [
+        "./dist/client/UserProfile.svelte.d.ts"
+      ],
+      "client/SignInButton.svelte": [
+        "./dist/client/SignInButton.svelte.d.ts"
+      ],
+      "client/SignUpButton.svelte": [
+        "./dist/client/SignUpButton.svelte.d.ts"
+      ],
+      "client/SignOutButton.svelte": [
+        "./dist/client/SignOutButton.svelte.d.ts"
+      ],
+      "client/OrganizationProfile.svelte": [
+        "./dist/client/OrganizationProfile.svelte.d.ts"
+      ],
+      "client/OrganizationSwitcher.svelte": [
+        "./dist/client/OrganizationSwitcher.svelte.d.ts"
+      ],
+      "client/CreateOrganization.svelte": [
+        "./dist/client/CreateOrganization.svelte.d.ts"
+      ]
+    }
+  },
+  "name": "clerk-sveltekit",
+  "version": "0.0.0",
+  "description": "5 Horizons Health Service API",
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "author": "Artemis Solutions, LLC.",
+  "peerDependencies": {
+    "svelte": "^4.0.0||^5.0.0",
+    "@sveltejs/kit": "^1.25.1||^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.18.6",
+    "@clerk/types": "^3.55.0",
+    "@sveltejs/adapter-vercel": "5.4.1",
+    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/package": "^2.2.2",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.51.0",
+    "postcss": "^8.4.31",
+    "publint": "^0.2.4",
+    "svelte": "^4.0.0",
+    "tailwindcss": "^3.3.5",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@clerk/backend": "^0.32.1",
+    "@clerk/clerk-js": "^4.61.0"
+  }
 }

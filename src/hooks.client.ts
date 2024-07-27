@@ -1,12 +1,8 @@
 import type { HandleClientError } from '@sveltejs/kit'
-// To use Clerk components:
-import { initializeClerkClient } from 'clerk-sveltekit/client'
-// Or for headless mode:
-// import { initializeClerkClient } from 'clerk-sveltekit/headless'
-// If there is an error with the import, try building the project
-import { PUBLIC_CLERK_AUTH } from '$env/static/public'
+import { initializeClerkClient } from './lib/client/index'
+import { PUBLIC_CLERK_KEY } from '$env/static/public'
 
-initializeClerkClient(PUBLIC_CLERK_AUTH, {
+initializeClerkClient(PUBLIC_CLERK_KEY, {
 	afterSignInUrl: '/admin/',
 	afterSignUpUrl: '/admin/',
 	signInUrl: '/sign-in',
