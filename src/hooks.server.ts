@@ -8,7 +8,7 @@ const publicPaths = ['sign-in', 'sign-up'];
 // protect all paths except for explicit public paths (e.g. sign in and sign up)
 function isPublicPath(url: URL){
     const currentPath = new URL(url)?.pathname?.toLowerCase();
-    return publicPaths.some(path => currentPath.includes(path));
+    return publicPaths.some(publicPath => currentPath.includes(publicPath));
 }
 
 export const handle: Handle = sequence(
